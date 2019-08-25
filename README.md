@@ -10,7 +10,7 @@ The plaftorm developed is simmilar to the famous Yelp platform, where you can ma
   - MongoDB
   - Passport
  
-## You can access the platform through the following link hosted on Heroku:
+### You can access the platform through the following link hosted on Heroku:
 
 
 To access more information about the course's content: https://www.udemy.com/share/100YK4BEASd11STHQ=/?xref=E0YYeFhRRXUJSUQvCz0GJVUWTx4dChQ%2BVFE=
