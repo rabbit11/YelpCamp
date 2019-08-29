@@ -77,35 +77,5 @@ router.delete('/:comment_id',checkCommentOwnership, function(req, res){
     });
 });
 
-//middleware
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/login');
-}
-
-function checkCommentOwnership(req, res, next){
-    Comment.findById(req.params.comment_id, function (err, foundComment) {
-        if (req.isAuthenticated()) {
-            if (err) {
-                res.redirect('back');
-            }
-            else {
-                //does user own the comment?
-                if (foundComment.author.id.equals(req.user._id)) {
-                    next();
-                }
-                else {
-                    res.redirect('back');
-                }
-            }
-        }
-        else {
-            res.redirect("back");
-        }
-
-    });
-}
 
 module.exports = router;
