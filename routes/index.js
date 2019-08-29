@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var User = require("../models/user");
 
+
 //route rote
 router.get("/", function (req, res) {
     res.render("landing");
