@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Campground = require("../models/campground");
-var middleware = require('../middleware')
+var middleware = require('../middleware');
+var moment = require('moment');
 
 //INDEX - all campgrounds page route
 router.get("/", function (req, res) {
@@ -54,7 +55,7 @@ router.get("/:id", function (req, res) {
         if (error) {
             console.log(error);
         } else {
-            res.render("./campgrounds/show", { campground: foundCampground });
+            res.render("./campgrounds/show", { campground: foundCampground, moment: moment });
         }
     });
 });
